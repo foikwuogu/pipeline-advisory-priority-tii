@@ -1,0 +1,426 @@
+{
+  "extension_build_date_utc": "2026-09-19",
+  "reused_tpec_stats": {
+    "generated_from": "data/processed/pipeline_prioritized_v1.csv",
+    "upstream_dataset_version": "v1.1",
+    "upstream_build_date_utc": "2026-09-12T17:22:56Z",
+    "dedup_rows_before": 27944,
+    "dedup_rows_after": 13939,
+    "dedup_rows_dropped": 14005,
+    "dedup_rows_dropped_pct": 50.12,
+    "total_rows": 13939,
+    "pipeline_relevant_rows": 3734,
+    "pipeline_relevant_pct": 26.79,
+    "sector_signal_rows": 4746,
+    "sector_signal_pct": 34.05,
+    "tier1_pipeline_core_rows": 72,
+    "tier2_ot_general_energy_rows": 9536,
+    "excluded_tier_rows": 444,
+    "unmapped_tier_rows": 3887,
+    "pipeline_relevant_tier1_share_pct": 1.12,
+    "pipeline_relevant_tier2_share_pct": 98.88,
+    "full_known_exploited_rows": 180,
+    "full_known_exploited_pct": 1.29,
+    "rel_known_exploited_rows": 63,
+    "rel_known_exploited_pct": 1.69,
+    "full_no_patch_rows": 135,
+    "full_no_patch_pct": 0.97,
+    "rel_no_patch_rows": 1,
+    "rel_no_patch_pct": 0.03,
+    "epss_match_rate_pct": 99.43,
+    "kev_match_rate_pct_upstream_note": "upstream reports 1.29% on the pre-dedup 27,944-row count; recomputed here on the deduplicated set below",
+    "vulnrichment_text_present_pct": 14.92,
+    "cpg2_any_control_pct_full": 16.81,
+    "attack_ics_match_rate_pct": 0.36,
+    "full_score_mean": 0.0438,
+    "full_score_median": 0.0064,
+    "rel_score_mean": 0.0222,
+    "rel_score_median": 0.0042,
+    "epss_high_threshold": 0.1,
+    "rows_missing_cve_id": 29,
+    "full_tier_low_pct": 60.9,
+    "rel_tier_low_pct": 74.5,
+    "full_tier_moderate_pct": 27.25,
+    "rel_tier_moderate_pct": 16.42,
+    "full_tier_high_pct": 4.69,
+    "rel_tier_high_pct": 4.18,
+    "full_tier_critical_pct": 7.15,
+    "rel_tier_critical_pct": 4.9,
+    "top10_advisories": [
+      {
+        "cve_id": "CVE-2023-44487",
+        "ICS-CERT_Number": "ICSA-24-165-04",
+        "Vendor": "Siemens",
+        "Product": "ST7 ScadaConnect",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.99999,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2023-38180",
+        "ICS-CERT_Number": "ICSA-24-165-04",
+        "Vendor": "Siemens",
+        "Product": "ST7 ScadaConnect",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.14016,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2025-14847",
+        "ICS-CERT_Number": "ICSA-26-218-01",
+        "Vendor": "ABB",
+        "Product": "ABB Ability Zenon",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.83218,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2017-6738",
+        "ICS-CERT_Number": "ICSA-17-208-04",
+        "Vendor": "Rockwell Automation",
+        "Product": "Allen-Bradley Stratix and ArmorStratix",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.10654,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2017-6736",
+        "ICS-CERT_Number": "ICSA-17-208-04",
+        "Vendor": "Rockwell Automation",
+        "Product": "Allen-Bradley Stratix and ArmorStratix",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.70559,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2023-44487",
+        "ICS-CERT_Number": "ICSA-25-203-04",
+        "Vendor": "Schneider Electric",
+        "Product": "Schneider Electric EcoStruxure Power Operation (Update A)",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.99999,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2023-5217",
+        "ICS-CERT_Number": "ICSA-25-203-04",
+        "Vendor": "Schneider Electric",
+        "Product": "Schneider Electric EcoStruxure Power Operation (Update A)",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.49013,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2017-6743",
+        "ICS-CERT_Number": "ICSA-17-208-04",
+        "Vendor": "Rockwell Automation",
+        "Product": "Allen-Bradley Stratix and ArmorStratix",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.10654,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2018-0296",
+        "ICS-CERT_Number": "ICSA-18-184-01",
+        "Vendor": "Rockwell Automation",
+        "Product": "Allen-Bradley Stratix 5950",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.99913,
+        "pipeline_tier": "tier2_ot_general_energy"
+      },
+      {
+        "cve_id": "CVE-2017-6737",
+        "ICS-CERT_Number": "ICSA-17-208-04",
+        "Vendor": "Rockwell Automation",
+        "Product": "Allen-Bradley Stratix and ArmorStratix",
+        "priority_score": 0.333333,
+        "known_exploited": true,
+        "epss": 0.44325,
+        "pipeline_tier": "tier2_ot_general_energy"
+      }
+    ]
+  },
+  "epss_sensitivity": [
+    {
+      "epss_threshold": 0.02,
+      "tsa3_flagged_full_n": 4147,
+      "tsa3_flagged_full_pct": 29.751,
+      "tsa3_flagged_relevant_n": 1432,
+      "tsa3_flagged_relevant_pct": 38.35
+    },
+    {
+      "epss_threshold": 0.04,
+      "tsa3_flagged_full_n": 2260,
+      "tsa3_flagged_full_pct": 16.214,
+      "tsa3_flagged_relevant_n": 769,
+      "tsa3_flagged_relevant_pct": 20.595
+    },
+    {
+      "epss_threshold": 0.1,
+      "tsa3_flagged_full_n": 1225,
+      "tsa3_flagged_full_pct": 8.788,
+      "tsa3_flagged_relevant_n": 403,
+      "tsa3_flagged_relevant_pct": 10.793
+    },
+    {
+      "epss_threshold": 0.2,
+      "tsa3_flagged_full_n": 885,
+      "tsa3_flagged_full_pct": 6.349,
+      "tsa3_flagged_relevant_n": 289,
+      "tsa3_flagged_relevant_pct": 7.74
+    },
+    {
+      "epss_threshold": 0.5,
+      "tsa3_flagged_full_n": 526,
+      "tsa3_flagged_full_pct": 3.774,
+      "tsa3_flagged_relevant_n": 183,
+      "tsa3_flagged_relevant_pct": 4.901
+    }
+  ],
+  "tier_stratified_breakdown": [
+    {
+      "pipeline_tier": "tier1_pipeline_core",
+      "n": 42,
+      "pct_of_pipeline_relevant": 1.12,
+      "priority_score_mean": 0.0055,
+      "priority_score_median": 0.0018,
+      "priority_score_std": 0.0088,
+      "priority_score_max": 0.0503,
+      "known_exploited_n": 0,
+      "known_exploited_pct": 0.0,
+      "epss_mean": 0.0251
+    },
+    {
+      "pipeline_tier": "tier2_ot_general_energy",
+      "n": 3692,
+      "pct_of_pipeline_relevant": 98.88,
+      "priority_score_mean": 0.0224,
+      "priority_score_median": 0.0042,
+      "priority_score_std": 0.0602,
+      "priority_score_max": 0.3333,
+      "known_exploited_n": 63,
+      "known_exploited_pct": 1.71,
+      "epss_mean": 0.0616
+    }
+  ],
+  "tier1_vs_tier2_mannwhitney_p_value": 0.00925296591824587,
+  "tier1_vs_tier2_mannwhitney_u": 59451.5,
+  "n_distinct_tier2_vendors": 50,
+  "top5_tier2_vendors_by_rowcount": [
+    {
+      "vendor": "Siemens",
+      "n_rows": 1509,
+      "known_exploited_n": 16,
+      "known_exploited_pct": 1.06,
+      "priority_score_mean": 0.019,
+      "priority_score_max": 0.3333
+    },
+    {
+      "vendor": "Schneider Electric",
+      "n_rows": 412,
+      "known_exploited_n": 6,
+      "known_exploited_pct": 1.46,
+      "priority_score_mean": 0.0126,
+      "priority_score_max": 0.3333
+    },
+    {
+      "vendor": "Hitachi Energy",
+      "n_rows": 323,
+      "known_exploited_n": 5,
+      "known_exploited_pct": 1.55,
+      "priority_score_mean": 0.0384,
+      "priority_score_max": 0.3333
+    },
+    {
+      "vendor": "Advantech",
+      "n_rows": 253,
+      "known_exploited_n": 2,
+      "known_exploited_pct": 0.79,
+      "priority_score_mean": 0.0181,
+      "priority_score_max": 0.3333
+    },
+    {
+      "vendor": "ABB",
+      "n_rows": 186,
+      "known_exploited_n": 1,
+      "known_exploited_pct": 0.54,
+      "priority_score_mean": 0.0245,
+      "priority_score_max": 0.3333
+    }
+  ],
+  "year_trend_regression": {
+    "years": [
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "full_counts": [
+      22,
+      103,
+      162,
+      146,
+      198,
+      256,
+      261,
+      435,
+      717,
+      466,
+      734,
+      1529,
+      1324,
+      1787,
+      1728,
+      2155
+    ],
+    "relevant_counts": [
+      2,
+      38,
+      79,
+      72,
+      111,
+      104,
+      142,
+      221,
+      195,
+      184,
+      357,
+      382,
+      262,
+      193,
+      433,
+      557
+    ],
+    "share_by_year": [
+      0.0909,
+      0.3689,
+      0.4877,
+      0.4932,
+      0.5606,
+      0.4062,
+      0.5441,
+      0.508,
+      0.272,
+      0.3948,
+      0.4864,
+      0.2498,
+      0.1979,
+      0.108,
+      0.2506,
+      0.2585
+    ],
+    "full_slope_per_year": 138.531,
+    "full_r_squared": 0.8619,
+    "relevant_slope_per_year": 28.95,
+    "relevant_r_squared": 0.7915,
+    "growth_rate_ratio_relevant_over_full": 0.209,
+    "share_slope_per_year": -0.012231,
+    "share_r_squared": 0.1439,
+    "share_mean": 0.3548,
+    "share_std": 0.1486,
+    "note": "2026 excluded as a partial year. Linear OLS trend on annual counts, 2010-2025."
+  },
+  "framework_coverage_validation": {
+    "n_outcomes": 6,
+    "n_frameworks": 5,
+    "n_possible_cells": 30,
+    "n_present_cells": 30,
+    "cell_coverage_pct": 100.0,
+    "source_type_counts_overall": {
+      "primary": 12,
+      "derived": 6,
+      "author-mapped": 12
+    },
+    "source_type_pct_overall": {
+      "primary": 40.0,
+      "derived": 20.0,
+      "author-mapped": 40.0
+    },
+    "per_framework_source_type": {
+      "NIST SP 800-82 Rev. 3": {
+        "primary": 6
+      },
+      "NIST SP 800-53 Rev. 5": {
+        "derived": 6
+      },
+      "IEC 62443": {
+        "author-mapped": 6
+      },
+      "CIS Controls v8": {
+        "author-mapped": 6
+      },
+      "NIST CSF 2.0": {
+        "primary": 6
+      }
+    },
+    "per_outcome_source_type": {
+      "TSA-1": {
+        "primary": 2,
+        "derived": 1,
+        "author-mapped": 2
+      },
+      "TSA-2": {
+        "primary": 2,
+        "derived": 1,
+        "author-mapped": 2
+      },
+      "TSA-3": {
+        "primary": 2,
+        "derived": 1,
+        "author-mapped": 2
+      },
+      "TSA-4": {
+        "primary": 2,
+        "derived": 1,
+        "author-mapped": 2
+      },
+      "TSA-5": {
+        "primary": 2,
+        "derived": 1,
+        "author-mapped": 2
+      },
+      "TSA-6": {
+        "primary": 2,
+        "derived": 1,
+        "author-mapped": 2
+      }
+    },
+    "frameworks": [
+      "CIS Controls v8",
+      "IEC 62443",
+      "NIST CSF 2.0",
+      "NIST SP 800-53 Rev. 5",
+      "NIST SP 800-82 Rev. 3"
+    ],
+    "outcomes": [
+      "TSA-1",
+      "TSA-2",
+      "TSA-3",
+      "TSA-4",
+      "TSA-5",
+      "TSA-6"
+    ],
+    "interpretation_note": "Full (100%) cell coverage means every TSA outcome group has *some* mapped control identifier in every reused framework -- it does NOT mean every mapping rests on equally strong evidence. The source_type breakdown is the load-bearing number: 'primary' cites the framework's own document directly, 'derived' reuses a secondary open-license source, and 'author-mapped' is this project's own judgment with no ready-made crosswalk to cite. This is a public-standards proxy validation, not operator-reported or operator-confirmed validation -- no primary operator survey or interview data was collected for this project."
+  }
+}

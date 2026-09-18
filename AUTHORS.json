@@ -1,0 +1,13 @@
+{
+  "authors": [
+    {
+      "name": "Friday Ogochukwu Ikwuogu",
+      "orcid": "0009-0009-2222-1318",
+      "email": "Friday.ikwuogu@gmail.com",
+      "affiliation": "Independent Researcher, Odessa, Texas, USA",
+      "role": "sole_author",
+      "credit_roles": ["Conceptualization", "Data curation", "Formal analysis", "Investigation", "Methodology", "Software", "Validation", "Visualization", "Writing - original draft", "Writing - review & editing"]
+    }
+  ],
+  "note": "Sole-authored, per the author's explicit confirmation for this IEEE Transactions on Industrial Informatics submission, consistent with the reused TPEC 2027 paper's final author list (see sibling repo pipeline-advisory-priority/AUTHORS.json)."
+}

@@ -1,0 +1,6 @@
+epss_threshold,tsa3_flagged_full_n,tsa3_flagged_full_pct,tsa3_flagged_relevant_n,tsa3_flagged_relevant_pct
+0.02,4147,29.751,1432,38.35
+0.04,2260,16.214,769,20.595
+0.1,1225,8.788,403,10.793
+0.2,885,6.349,289,7.74
+0.5,526,3.774,183,4.901

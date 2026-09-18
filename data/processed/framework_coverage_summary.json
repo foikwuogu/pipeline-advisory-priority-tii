@@ -1,0 +1,82 @@
+{
+  "n_outcomes": 6,
+  "n_frameworks": 5,
+  "n_possible_cells": 30,
+  "n_present_cells": 30,
+  "cell_coverage_pct": 100.0,
+  "source_type_counts_overall": {
+    "primary": 12,
+    "derived": 6,
+    "author-mapped": 12
+  },
+  "source_type_pct_overall": {
+    "primary": 40.0,
+    "derived": 20.0,
+    "author-mapped": 40.0
+  },
+  "per_framework_source_type": {
+    "NIST SP 800-82 Rev. 3": {
+      "primary": 6
+    },
+    "NIST SP 800-53 Rev. 5": {
+      "derived": 6
+    },
+    "IEC 62443": {
+      "author-mapped": 6
+    },
+    "CIS Controls v8": {
+      "author-mapped": 6
+    },
+    "NIST CSF 2.0": {
+      "primary": 6
+    }
+  },
+  "per_outcome_source_type": {
+    "TSA-1": {
+      "primary": 2,
+      "derived": 1,
+      "author-mapped": 2
+    },
+    "TSA-2": {
+      "primary": 2,
+      "derived": 1,
+      "author-mapped": 2
+    },
+    "TSA-3": {
+      "primary": 2,
+      "derived": 1,
+      "author-mapped": 2
+    },
+    "TSA-4": {
+      "primary": 2,
+      "derived": 1,
+      "author-mapped": 2
+    },
+    "TSA-5": {
+      "primary": 2,
+      "derived": 1,
+      "author-mapped": 2
+    },
+    "TSA-6": {
+      "primary": 2,
+      "derived": 1,
+      "author-mapped": 2
+    }
+  },
+  "frameworks": [
+    "CIS Controls v8",
+    "IEC 62443",
+    "NIST CSF 2.0",
+    "NIST SP 800-53 Rev. 5",
+    "NIST SP 800-82 Rev. 3"
+  ],
+  "outcomes": [
+    "TSA-1",
+    "TSA-2",
+    "TSA-3",
+    "TSA-4",
+    "TSA-5",
+    "TSA-6"
+  ],
+  "interpretation_note": "Full (100%) cell coverage means every TSA outcome group has *some* mapped control identifier in every reused framework -- it does NOT mean every mapping rests on equally strong evidence. The source_type breakdown is the load-bearing number: 'primary' cites the framework's own document directly, 'derived' reuses a secondary open-license source, and 'author-mapped' is this project's own judgment with no ready-made crosswalk to cite. This is a public-standards proxy validation, not operator-reported or operator-confirmed validation -- no primary operator survey or interview data was collected for this project."
+}

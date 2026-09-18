@@ -1,0 +1,31 @@
+tsa_outcome_id,tsa_outcome_name,framework,source_type,control_ids
+TSA-1,Network Segmentation,NIST SP 800-82 Rev. 3,primary,"§ Network Architecture (network segmentation and boundary protection guidance, OT overlay of SC-7)"
+TSA-1,Network Segmentation,NIST SP 800-53 Rev. 5,derived,"SC-7, SC-7(21), AC-4"
+TSA-1,Network Segmentation,IEC 62443,author-mapped,"62443-3-3 SR 5.1, SR 5.2 (FR5 — Restricted Data Flow)"
+TSA-1,Network Segmentation,CIS Controls v8,author-mapped,"Safeguards 12.2, 12.4, 13.4"
+TSA-1,Network Segmentation,NIST CSF 2.0,primary,"PR.DS, PR.IR, PR.PS (CPG 2.F, 2.P)"
+TSA-2,Access Control,NIST SP 800-82 Rev. 3,primary,"§ Access Control (OT-tailored account management, remote access, least privilege)"
+TSA-2,Access Control,NIST SP 800-53 Rev. 5,derived,"AC-2, AC-3, AC-4, AC-5, AC-6, AC-7, AC-17, IA-2, IA-5, IA-8"
+TSA-2,Access Control,IEC 62443,author-mapped,"62443-3-3 SR 1.1–SR 1.13 (FR1 — Identification & Authentication Control), SR 2.1 (FR2 — Use Control)"
+TSA-2,Access Control,CIS Controls v8,author-mapped,"Safeguards 5.1–5.6 (Account Management), 6.3, 6.5 (Access Control Management, incl. MFA)"
+TSA-2,Access Control,NIST CSF 2.0,primary,"PR.AA, GV.RR (CPG 2.A, 2.B, 2.C, 2.D, 2.E, 2.H)"
+TSA-3,Continuous Monitoring,NIST SP 800-82 Rev. 3,primary,"§ Continuous Monitoring / Intrusion Detection (OT-tailored SI-4, AU family)"
+TSA-3,Continuous Monitoring,NIST SP 800-53 Rev. 5,derived,"AU-2, AU-6, SI-2, SI-4"
+TSA-3,Continuous Monitoring,IEC 62443,author-mapped,"62443-3-3 SR 6.1, SR 6.2 (FR6 — Timely Response to Events)"
+TSA-3,Continuous Monitoring,CIS Controls v8,author-mapped,"Safeguards 8.2, 8.5, 8.9 (Audit Log Management), 13.1, 13.2 (Network Monitoring & Defense)"
+TSA-3,Continuous Monitoring,NIST CSF 2.0,primary,"DE.CM, DE.AE (CPG 2.G, 2.T, 2.U, 3.A)"
+TSA-4,Patch Management,NIST SP 800-82 Rev. 3,primary,§ Patch Management (risk-based patching under OT availability constraints)
+TSA-4,Patch Management,NIST SP 800-53 Rev. 5,derived,"SI-2, RA-5, CM-3, SA-22"
+TSA-4,Patch Management,IEC 62443,author-mapped,IEC TR 62443-2-3 (Patch management in the IACS environment); 62443-3-3 SR 7.6 (FR7 — Resource Availability)
+TSA-4,Patch Management,CIS Controls v8,author-mapped,Safeguards 7.1–7.7 (Continuous Vulnerability Management)
+TSA-4,Patch Management,NIST CSF 2.0,primary,"ID.AM, ID.RA (CPG 1.A, 1.E, 2.Q)"
+TSA-5,Governance & Risk Management,NIST SP 800-82 Rev. 3,primary,§ Governance / Program Management (OT-tailored organizational roles and risk strategy)
+TSA-5,Governance & Risk Management,NIST SP 800-53 Rev. 5,derived,"PM-01, PM-02, PM-09, PM-10, PM-13, PM-15, PL-01, PL-02, AT-01–AT-04"
+TSA-5,Governance & Risk Management,IEC 62443,author-mapped,IEC 62443-2-1:2024 (Security Program Requirements for IACS Asset Owners)
+TSA-5,Governance & Risk Management,CIS Controls v8,author-mapped,"Safeguards 14.1, 14.9 (Security Awareness and Skills Training) — partial fit"
+TSA-5,Governance & Risk Management,NIST CSF 2.0,primary,"GV.RM, GV.OC, GV.RR, GV.OV, GV.PO, GV.SC (CPG 1.B, 1.C, 1.G, 1.H, 1.I)"
+TSA-6,Assessment & Incident Response,NIST SP 800-82 Rev. 3,primary,§ Incident Response / Assessment (OT-tailored IR planning and periodic architecture review)
+TSA-6,Assessment & Incident Response,NIST SP 800-53 Rev. 5,derived,"CA-02, CA-05, CA-07, CA-08, IR-01, IR-04, IR-06, PL-08"
+TSA-6,Assessment & Incident Response,IEC 62443,author-mapped,IEC 62443-3-2:2020 (Security risk assessment for system design); IEC 62443-2-1:2024 (IR-related CSMS elements)
+TSA-6,Assessment & Incident Response,CIS Controls v8,author-mapped,"Safeguards 17.1–17.9 (Incident Response Management), 18.1–18.5 (Penetration Testing)"
+TSA-6,Assessment & Incident Response,NIST CSF 2.0,primary,"ID.IM, RS.MA, RS.AN, RS.CO, RC.RP, RC.CO (CPG 2.S, 4.A, 4.B, 5.A)"
