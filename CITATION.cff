@@ -14,10 +14,10 @@ authors:
     given-names: "Abidemi"
     affiliation: "Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria"
 license: MIT
-repository-code: "[to be filled in on GitHub publish]"
+repository-code: "https://github.com/foikwuogu/ONG-OT-vulnerability-prioritization-dataset-method-and-operator-validation"
 identifiers:
   - type: doi
-    value: "[to be filled in on Zenodo publish]"
+    value: "10.5281/zenodo.22857631"
 preferred-citation:
   type: article
   title: "ONG-OT vulnerability prioritization: dataset, method, and sector-specific validation"

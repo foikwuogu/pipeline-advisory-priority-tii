@@ -200,6 +200,7 @@ const children = [
 
   new Paragraph({ children: [new PageBreak()] }),
   H1("Appendix A: Reproducibility"),
+  P("Data and code availability: All new analysis code, configuration, documentation, figures, and this manuscript are archived at Zenodo, DOI: 10.5281/zenodo.22857631 (https://doi.org/10.5281/zenodo.22857631), corresponding to the GitHub repository release tagged v1.0.0. This DOI covers this extension's own reproducibility package; it is separate from any DOI the base TPEC 2027 paper's own reproducibility package may receive [1], and separate from the IEEE Xplore DOI this journal article would receive upon acceptance and publication.", { italics: true }),
   P("From a clone of this repository (data/raw/pipeline_prioritized_v1_REUSED.csv is committed; the base study's own upstream raw export is not, per [1]):"),
   P("pip install pandas pyyaml", { italics: true }),
   P("python3 src/01_sensitivity_and_stratified.py", { italics: true }),

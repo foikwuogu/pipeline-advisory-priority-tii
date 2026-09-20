@@ -1,7 +1,11 @@
 # ONG-OT vulnerability prioritization: dataset, method, and sector-specific validation
 
-**Status: DRAFT — not yet author-verified.** See `docs/VERIFY_CHECKLIST.md` before
-treating any number here as finished. Not yet submitted anywhere.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22857631.svg)](https://doi.org/10.5281/zenodo.22857631)
+
+**Status: SIGNED OFF 2026-09-20 (see `docs/VERIFY_CHECKLIST.md`) and archived at
+Zenodo, DOI: [10.5281/zenodo.22857631](https://doi.org/10.5281/zenodo.22857631)
+(GitHub release v1.0.0).** Not yet submitted to IEEE Transactions on Industrial
+Informatics as of this writing.
 
 Extended, journal-length companion to a verified conference paper:
 
