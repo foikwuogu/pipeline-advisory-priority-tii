@@ -13,17 +13,15 @@
       "email": "abutu_s@pti.edu.ng",
       "affiliation": "Electrical and Electronic Engineering Department, Petroleum Training Institute, Effurun, Delta State, Nigeria",
       "role": "co_author",
-      "credit_roles": ["Investigation", "Validation", "Writing - review & editing"],
-      "credit_roles_note": "Placeholder CRediT roles reflecting a domain-expert contributor; the author should confirm/adjust these to match this contributor's actual role in this manuscript before submission."
+      "credit_roles": ["Investigation", "Validation", "Writing - review & editing"]
     },
     {
       "name": "Abidemi Orimogunje",
       "email": "orimogunjea@run.edu.ng",
       "affiliation": "Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria",
       "role": "co_author",
-      "credit_roles": ["Investigation", "Validation", "Writing - review & editing"],
-      "credit_roles_note": "Placeholder CRediT roles reflecting a domain-expert contributor; the author should confirm/adjust these to match this contributor's actual role in this manuscript before submission."
+      "credit_roles": ["Investigation", "Validation", "Writing - review & editing"]
     }
   ],
-  "note": "Corrected 2026-09-20: this manuscript reuses the ONG-OT Vulnerability Prioritization dataset and taxonomy, to which Silas Abutu and Abidemi Orimogunje contributed; per the corresponding author's confirmation, they are credited as co-authors here rather than sole authorship. This differs intentionally from the separate, sole-authored TPEC 2027 conference paper (see sibling repo pipeline-advisory-priority/AUTHORS.json), which is a distinct piece of work this manuscript extends but does not share an author list with."
+  "note": "Corrected 2026-09-20: this manuscript reuses the ONG-OT Vulnerability Prioritization dataset and taxonomy, to which Silas Abutu and Abidemi Orimogunje contributed; per the corresponding author's confirmation, they are credited as co-authors here rather than sole authorship. Their CRediT roles (Investigation, Validation, Writing - review & editing) were confirmed correct by the corresponding author on 2026-09-20. This differs intentionally from the separate, sole-authored TPEC 2027 conference paper (see sibling repo pipeline-advisory-priority/AUTHORS.json), which is a distinct piece of work this manuscript extends but does not share an author list with."
 }

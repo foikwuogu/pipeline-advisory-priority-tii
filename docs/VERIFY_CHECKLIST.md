@@ -87,10 +87,10 @@ submission — this is not a formality.
   Ikwuogu (corresponding), Silas Abutu, Abidemi Orimogunje. This is
   intentionally distinct from the separate, sole-authored TPEC 2027
   conference paper's author list. The CRediT contribution roles assigned to
-  Abutu and Orimogunje in `AUTHORS.json` are the build's best-guess
-  placeholders (Investigation, Validation, Writing – review & editing) —
-  **the author should confirm or adjust these to accurately reflect each
-  co-author's actual role before submission.**
+  Abutu and Orimogunje in `AUTHORS.json` (Investigation, Validation, Writing
+  – review & editing) were confirmed correct by the corresponding author on
+  2026-09-20 ("you got it right"). This item is fully resolved with no
+  remaining caveats.
 
 ## Sign-off
 
