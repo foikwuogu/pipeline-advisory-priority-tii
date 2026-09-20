@@ -80,11 +80,14 @@ const subtitle = new Paragraph({
 });
 const authorBlock = new Paragraph({
   alignment: AlignmentType.CENTER, spacing: { after: 60 },
-  children: [new TextRun({ text: "Ogochukwu Friday Ikwuogu", font: FONT, size: 22 })],
+  children: [new TextRun({ text: "Ogochukwu Friday Ikwuogu, Silas Abutu, and Abidemi Orimogunje", font: FONT, size: 22 })],
 });
 const affilBlock = new Paragraph({
   alignment: AlignmentType.CENTER, spacing: { after: 300 },
-  children: [new TextRun({ text: "Independent Researcher, Odessa, Texas, USA — Friday.ikwuogu@gmail.com — ORCID 0009-0009-2222-1318", font: FONT, size: 20 })],
+  children: [new TextRun({
+    text: "O. F. Ikwuogu (corresponding author) is an Independent Researcher, Odessa, Texas, USA (e-mail: Friday.ikwuogu@gmail.com; ORCID 0009-0009-2222-1318). S. Abutu is with the Electrical and Electronic Engineering Department, Petroleum Training Institute, Effurun, Delta State, Nigeria (e-mail: abutu_s@pti.edu.ng). A. Orimogunje is with the Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria (e-mail: orimogunjea@run.edu.ng).",
+    font: FONT, size: 20 }),
+  ],
 });
 
 const abstract = new Paragraph({
@@ -176,7 +179,7 @@ const children = [
   P("Extending a verified conference-length analysis with a robustness check, a finer statistical stratification, a quantified trend estimate, and—most importantly—an honest accounting of what a public-standards crosswalk can and cannot establish, produces a paper that is more defensible, not merely longer. The central methodological lesson we would offer other researchers building similar OT/ICS prioritization schemes is the one in Section IV: a claim of “validation” should specify, in the abstract and not only in a limitations section, exactly what kind of evidence backs it—primary source, secondary compilation, or the author's own judgment—because these are not interchangeable, and conflating them is a more serious error than acknowledging a gap. Future work should pursue real operator-confirmed validation, a higher-precision pipeline-asset taxonomy validated against a specific operator's inventory, and annual re-runs of the year-over-year trend analysis (Section V.E) as more advisory years accumulate."),
 
   H1("Acknowledgment"),
-  P("The author thanks the ICS Advisory Project, CISA, FIRST.org, MITRE, NIST, the Center for Internet Security, and the TSA for maintaining the open data and public directive/standard text this analysis builds on."),
+  P("The authors thank the ICS Advisory Project, CISA, FIRST.org, MITRE, NIST, the Center for Internet Security, and the TSA for maintaining the open data and public directive/standard text this analysis builds on."),
 
   H1("References"),
   P("[1] O. F. Ikwuogu, “Which ICS advisories matter to a pipeline operator? Exploitation likelihood, patch availability, and compensating controls across CISA advisories, 2010–2026,” prepared for IEEE Texas Power and Energy Conference (TPEC 2027), College Station, TX (not yet submitted as of this writing; TPEC 2027's call for papers is not yet published).", { align: AlignmentType.LEFT }),

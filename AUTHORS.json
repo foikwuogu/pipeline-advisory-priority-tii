@@ -5,9 +5,25 @@
       "orcid": "0009-0009-2222-1318",
       "email": "Friday.ikwuogu@gmail.com",
       "affiliation": "Independent Researcher, Odessa, Texas, USA",
-      "role": "sole_author",
+      "role": "corresponding_author",
       "credit_roles": ["Conceptualization", "Data curation", "Formal analysis", "Investigation", "Methodology", "Software", "Validation", "Visualization", "Writing - original draft", "Writing - review & editing"]
+    },
+    {
+      "name": "Silas Abutu",
+      "email": "abutu_s@pti.edu.ng",
+      "affiliation": "Electrical and Electronic Engineering Department, Petroleum Training Institute, Effurun, Delta State, Nigeria",
+      "role": "co_author",
+      "credit_roles": ["Investigation", "Validation", "Writing - review & editing"],
+      "credit_roles_note": "Placeholder CRediT roles reflecting a domain-expert contributor; the author should confirm/adjust these to match this contributor's actual role in this manuscript before submission."
+    },
+    {
+      "name": "Abidemi Orimogunje",
+      "email": "orimogunjea@run.edu.ng",
+      "affiliation": "Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria",
+      "role": "co_author",
+      "credit_roles": ["Investigation", "Validation", "Writing - review & editing"],
+      "credit_roles_note": "Placeholder CRediT roles reflecting a domain-expert contributor; the author should confirm/adjust these to match this contributor's actual role in this manuscript before submission."
     }
   ],
-  "note": "Sole-authored, per the author's explicit confirmation for this IEEE Transactions on Industrial Informatics submission, consistent with the reused TPEC 2027 paper's final author list (see sibling repo pipeline-advisory-priority/AUTHORS.json)."
+  "note": "Corrected 2026-09-20: this manuscript reuses the ONG-OT Vulnerability Prioritization dataset and taxonomy, to which Silas Abutu and Abidemi Orimogunje contributed; per the corresponding author's confirmation, they are credited as co-authors here rather than sole authorship. This differs intentionally from the separate, sole-authored TPEC 2027 conference paper (see sibling repo pipeline-advisory-priority/AUTHORS.json), which is a distinct piece of work this manuscript extends but does not share an author list with."
 }

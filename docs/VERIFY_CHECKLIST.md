@@ -72,11 +72,25 @@ submission — this is not a formality.
   (An informal pass was done via the rendered PDF pages during the build;
   this item asks for the author's own full read-through, not a proxy for
   it.)
-- [x] **Author block and affiliation** (`AUTHORS.json`) — RESOLVED
-  2026-09-20. Author confirmed: "i confirm is Ok." Sole authorship
-  (Friday Ogochukwu Ikwuogu, ORCID 0009-0009-2222-1318, Independent
-  Researcher, Odessa, Texas, USA) and the exact name/ORCID/affiliation
-  spelling are confirmed correct for this submission.
+- [x] **Author block and affiliation** (`AUTHORS.json`) — RESOLVED, then
+  CORRECTED, 2026-09-20. Initially confirmed as sole authorship ("i confirm
+  is Ok"). On further review, prompted by a stored record of co-authors for
+  the underlying "ONG-OT Vulnerability Prioritization Dataset" project, the
+  corresponding author confirmed that Silas Abutu (Petroleum Training
+  Institute) and Abidemi Orimogunje (Redeemer's University) contributed to
+  that underlying dataset/taxonomy work which this manuscript reuses and
+  extends, and should therefore be credited as co-authors on this
+  manuscript per standard authorship criteria (substantial contribution to
+  the work presented). `AUTHORS.json`, `CITATION.cff`, the manuscript's
+  title-page author/affiliation block, `README.md`, and `docs/BUILD_SPEC.md`
+  were all updated to the corrected three-author list: Friday Ogochukwu
+  Ikwuogu (corresponding), Silas Abutu, Abidemi Orimogunje. This is
+  intentionally distinct from the separate, sole-authored TPEC 2027
+  conference paper's author list. The CRediT contribution roles assigned to
+  Abutu and Orimogunje in `AUTHORS.json` are the build's best-guess
+  placeholders (Investigation, Validation, Writing – review & editing) —
+  **the author should confirm or adjust these to accurately reflect each
+  co-author's actual role before submission.**
 
 ## Sign-off
 

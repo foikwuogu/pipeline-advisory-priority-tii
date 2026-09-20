@@ -75,10 +75,17 @@ TSA Pipeline-2021-02 crosswalk), plus five independently published control
 frameworks used only for the Section IV crosswalk (NIST SP 800-82 Rev. 3, NIST
 SP 800-53 Rev. 5, IEC 62443, CIS Controls v8, NIST CSF 2.0).
 
-## Author
+## Authors
 
-Sole author: Friday Ogochukwu Ikwuogu (ORCID 0009-0009-2222-1318),
-Independent Researcher, Odessa, Texas, USA. See `AUTHORS.json`.
+Friday Ogochukwu Ikwuogu (corresponding author, ORCID 0009-0009-2222-1318),
+Independent Researcher, Odessa, Texas, USA; Silas Abutu, Electrical and
+Electronic Engineering Department, Petroleum Training Institute, Effurun,
+Delta State, Nigeria; Abidemi Orimogunje, Electrical and Electronic
+Engineering Department, Redeemer's University, Ede, Osun State, Nigeria.
+Corrected 2026-09-20 from an earlier sole-authorship draft — see
+`AUTHORS.json` for the full record and CRediT roles. This author list is
+distinct from the separate, sole-authored TPEC 2027 conference paper this
+manuscript extends.
 
 ## License
 

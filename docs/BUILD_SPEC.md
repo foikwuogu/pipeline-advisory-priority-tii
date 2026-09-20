@@ -9,7 +9,10 @@ validation* (extended version of the TPEC 2027 paper). Target: IEEE Transactions
 Industrial Informatics (IEEE TII). Planned submission: March 2027. [Manuscript ID
 pending — assigned by IEEE's Author Portal at submission.]
 
-This is an **extended version** of a verified, sole-authored conference paper:
+This is an **extended version** of a verified, sole-authored conference paper
+(the base TPEC 2027 paper remains sole-authored; this extended manuscript's
+own author list was corrected 2026-09-20 to include two co-authors — see the
+authorship note near the end of this document):
 Ikwuogu, O. F., *Which ICS advisories matter to a pipeline operator? Exploitation
 likelihood, patch availability, and compensating controls across CISA advisories,
 2010–2026*, prepared for IEEE TPEC 2027 (not yet submitted — TPEC 2027's CFP is not
@@ -143,9 +146,18 @@ coarser unit: one row = one (TSA outcome, control framework) cell (30 rows in
   re-fetched; every inherited limitation from the sibling repo's own
   `docs/LIMITATIONS.md` applies unchanged here (see this repo's own LIMITATIONS.md,
   which incorporates them by reference plus new items).
-- Sole authorship (Friday Ogochukwu Ikwuogu), per the author's explicit 2026-09-19
-  confirmation for this specific submission, consistent with the TPEC paper's own
-  final author list.
+- Authorship CORRECTED 2026-09-20: an earlier 2026-09-19 build round recorded
+  sole authorship (Friday Ogochukwu Ikwuogu) for this submission, consistent
+  with the TPEC paper's own sole-authored final author list. On review, the
+  corresponding author confirmed that Silas Abutu and Abidemi Orimogunje —
+  credited co-authors on the underlying ONG-OT Vulnerability Prioritization
+  dataset/taxonomy project this manuscript reuses and extends — contributed
+  to that underlying work, and per authorship criteria (substantial
+  contribution to the work this manuscript presents) should be credited as
+  co-authors here too. This manuscript's author list is now: Friday
+  Ogochukwu Ikwuogu (corresponding), Silas Abutu, Abidemi Orimogunje — see
+  `AUTHORS.json`. This is intentionally distinct from the separate,
+  sole-authored TPEC 2027 conference paper's author list.
 
 ## License
 

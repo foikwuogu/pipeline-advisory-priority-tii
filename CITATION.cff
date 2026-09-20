@@ -7,6 +7,12 @@ authors:
     given-names: "Ogochukwu Friday"
     orcid: "https://orcid.org/0009-0009-2222-1318"
     affiliation: "Independent Researcher, Odessa, Texas, USA"
+  - family-names: Abutu
+    given-names: "Silas"
+    affiliation: "Electrical and Electronic Engineering Department, Petroleum Training Institute, Effurun, Delta State, Nigeria"
+  - family-names: Orimogunje
+    given-names: "Abidemi"
+    affiliation: "Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria"
 license: MIT
 repository-code: "[to be filled in on GitHub publish]"
 identifiers:
@@ -19,6 +25,10 @@ preferred-citation:
     - family-names: Ikwuogu
       given-names: "Ogochukwu Friday"
       orcid: "https://orcid.org/0009-0009-2222-1318"
+    - family-names: Abutu
+      given-names: "Silas"
+    - family-names: Orimogunje
+      given-names: "Abidemi"
   journal: "IEEE Transactions on Industrial Informatics"
   year: 2027
   doi: "[to be filled in on IEEE Xplore publication, if accepted]"
