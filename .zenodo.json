@@ -1,0 +1,43 @@
+{
+  "title": "ONG-OT vulnerability prioritization: dataset, method, and sector-specific validation (extended version of the TPEC 2027 paper)",
+  "description": "<p>Reproducibility package for an extended, journal-length analysis of CISA Industrial Control Systems (ICS) advisories relevant to oil and gas pipeline operators, prepared as an extension of a conference paper for submission to IEEE Transactions on Industrial Informatics.</p><p>This package reuses an already-verified, deduplicated dataset of 13,939 CVE&ndash;advisory pairs (2010&ndash;2026) and adds four new contributions: (1) an EPSS-threshold sensitivity analysis showing how much of the study's exploitation-response flag rate depends on an author-chosen parameter; (2) a statistically tested stratification of the pipeline-relevant subset by classification-confidence tier (Mann-Whitney U, tier1 n=42 vs. tier2 n=3,692); (3) a year-over-year trend regression on the pipeline-relevant share of advisories, 2010&ndash;2025; and (4) an explicit, citable coverage-and-provenance crosswalk of TSA Pipeline-2021-02 outcome groups against five independently published control frameworks (NIST SP 800-82 Rev. 3, NIST SP 800-53 Rev. 5, IEC 62443, CIS Controls v8, and NIST CSF 2.0), replacing an unsubstantiated claim of &ldquo;operator validation&rdquo; with a transparent public-standards proxy and disclosing exactly what share of that crosswalk (40%) rests on the authors' own judgment versus a framework's own primary text.</p><p>Contents: new analysis code (<code>src/</code>), configuration and taxonomy files, documentation including a full author-verification checklist (<code>docs/</code>), figures, and the final, signed-off manuscript (<code>manuscript/</code>). Every number in the manuscript is traced to a machine-written <code>stats.json</code> file produced by a documented, versioned pipeline &mdash; nothing is asserted without a reproducible source. No primary operator data (interviews or surveys) was collected for this study; this is disclosed explicitly in the manuscript itself, not only in a limitations section.</p>",
+  "creators": [
+    {
+      "name": "Ikwuogu, Ogochukwu Friday",
+      "affiliation": "Independent Researcher, Odessa, Texas, USA",
+      "orcid": "0009-0009-2222-1318"
+    },
+    {
+      "name": "Abutu, Silas",
+      "affiliation": "Electrical and Electronic Engineering Department, Petroleum Training Institute, Effurun, Delta State, Nigeria"
+    },
+    {
+      "name": "Orimogunje, Abidemi",
+      "affiliation": "Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "ICS advisories",
+    "pipeline cybersecurity",
+    "vulnerability prioritization",
+    "EPSS",
+    "KEV",
+    "TSA Security Directive",
+    "NIST SP 800-82",
+    "IEC 62443",
+    "CIS Controls",
+    "compensating controls",
+    "operational technology",
+    "critical infrastructure"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/foikwuogu/ONG-OT-vulnerability-prioritization-dataset-method-and-operator-validation",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
