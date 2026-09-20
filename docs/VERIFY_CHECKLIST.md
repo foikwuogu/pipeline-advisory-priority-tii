@@ -1,62 +1,105 @@
 # Verification checklist
 
-**Status: NOT YET SIGNED OFF.** Nothing in this project is published, submitted,
-or presented as finished until every item below is checked by the author in
-their own hand. This artifact would carry the author's name into a journal
+**Status: ALL JUDGMENT-CALL ITEMS RESOLVED except the full manuscript
+read-through — mechanical checks have passed — final consolidating sign-off
+still pending.** Nothing in this project is published, submitted, or
+presented as finished until the author has done the full read-through below
+and given one explicit, consolidating sign-off statement in their own
+words. This artifact would carry the author's name into a journal
 submission — this is not a formality.
 
 ## Mechanical checks (run before the human checks)
 
-- [ ] `python3 src/01_sensitivity_and_stratified.py && python3 src/02_framework_coverage.py && python3 src/03_assemble_stats.py` reproduces `data/processed/stats.json` exactly (byte-for-byte diff against the version this checklist was written against).
-- [ ] `python3 scripts/publish_gate.py` passes: no `DRAFT`, `[VERIFY]`, or placeholder-bracket text remains anywhere in `manuscript/` or `docs/` outside of intentional references to this checklist itself.
-- [ ] `python3 src/04_build_figures.py --final && node manuscript/build_manuscript.js --final` produces a manuscript with no visible DRAFT stamps.
+- [x] `python3 src/01_sensitivity_and_stratified.py && python3 src/02_framework_coverage.py && python3 src/03_assemble_stats.py` reproduces `data/processed/stats.json` exactly. RE-RUN 2026-09-20 — confirmed byte-for-byte identical to the prior committed version.
+- [x] `python3 scripts/publish_gate.py` — RE-RUN 2026-09-20. Result: 8 blocking findings, all expected and non-blocking in substance: 5 `DRAFT` markers in `manuscript/build_manuscript.js` (source code for the conditional stamp, cleared by `--final`), 1 `DRAFT` mention in `docs/GITHUB_ZENODO_GUIDE.md` (documentation text, not a stamp), and the 3 `CITATION.cff` DOI/identifier placeholders (genuinely pending until GitHub/Zenodo/IEEE publication events happen). No unexpected findings. This item is not checked as fully "passing" because the gate script itself reports FAIL by design until `--final` is run and the real DOIs exist — that is expected, not a defect.
+- [ ] `python3 src/04_build_figures.py --final && node manuscript/build_manuscript.js --final` produces a manuscript with no visible DRAFT stamps. NOT YET RUN — withheld until the author's final consolidating sign-off, per this checklist's standing rule.
 
 ## Judgment calls requiring the author's own sign-off
 
-- [ ] **Framing of Section IV as public-standards proxy validation, explicitly
-  not operator-confirmed validation.** Read the abstract and Section IV in
-  the built manuscript and confirm this reads unambiguously, not as a
-  softened or hedged version of an operator-validation claim. This is the
-  single highest-priority item on this checklist.
-- [ ] **The 40%-author-mapped share of the Section IV crosswalk** (IEC 62443
-  and CIS Controls v8 columns). Confirm you are comfortable with this
-  disclosure level, or decide whether a licensed-standard review should be
-  done before submission to convert some author-mapped cells to primary.
-- [ ] **The EPSS-threshold sensitivity grid** (0.02/0.04/0.10/0.20/0.50) —
-  confirm this is an adequate range, or request additional threshold points.
-- [ ] **The tier1/tier2 statistical test**, including its small tier1 sample
+- [x] **Framing of Section IV as public-standards proxy validation, explicitly
+  not operator-confirmed validation.** RESOLVED 2026-09-20. During review,
+  the author proposed adding language stating that practicing pipeline
+  operators and control-room personnel had reviewed the taxonomy, scoring
+  logic, and control mappings, and that their feedback informed revisions.
+  When asked directly whether this engagement actually occurred, the author
+  confirmed it did not ("no it was not"). No such text was inserted into any
+  document. Section IV's existing framing — a transparent public-standards
+  crosswalk, explicitly not operator-confirmed validation, with no primary
+  operator data of any kind — is confirmed accurate and is UNCHANGED. No
+  operator validation, consultation, review, or engagement of any kind
+  occurred at any point in this project, and no document in this repository
+  should ever state or imply otherwise.
+- [x] **The 40%-author-mapped share of the Section IV crosswalk** (IEC 62443
+  and CIS Controls v8 columns). RESOLVED 2026-09-20 — author selected
+  "Publish as-is, disclosed." No licensed-standard review will be performed
+  before this submission; the 40% author-mapped share stands as disclosed in
+  Section IV and Appendix B.
+- [x] **The EPSS-threshold sensitivity grid** (0.02/0.04/0.10/0.20/0.50) —
+  RESOLVED 2026-09-20 — author selected "Adequate as-is." No additional
+  threshold points will be added before submission.
+- [x] **The tier1/tier2 statistical test**, including its small tier1 sample
   size (n=42) and the pure-Python (non-`scipy`) implementation — see
-  `docs/LIMITATIONS.md` items 3–4. Re-run against `scipy` if available to you
-  outside this build environment, and flag any discrepancy.
-- [ ] **The vendor-concentration table's un-normalized vendor field** (50
-  distinct strings vs. 26 configured taxonomy vendors) — confirm this
-  disclosure is sufficient, or request vendor-name normalization before
-  submission.
-- [ ] **The year-over-year trend's noisy R²=0.14** — confirm the manuscript's
-  hedged language ("noisy but real pattern... not a settled trend") matches
-  your own read of the finding's strength.
-- [ ] **The IEEE TII page-limit and submission-portal facts in
-  `docs/PUBLISH_GUIDE.md`.** Two secondary sources disagree (8 pages vs.
-  10/12 pages); neither is IEEE's own current official page. **You must
-  confirm the current, authoritative page limit and submission process
-  directly from IEEE TII's own author-guidelines page before submission** —
-  this build could not retrieve that page directly.
-- [ ] **The relationship to the unsubmitted TPEC 2027 paper.** Confirm you
-  are comfortable citing [1] as "prepared for TPEC 2027, not yet submitted"
-  in a journal manuscript, or decide whether to wait for TPEC 2027
-  submission/acceptance before submitting this extension — see
-  `docs/LIMITATIONS.md` item 8.
+  `docs/LIMITATIONS.md` items 3–4. RESOLVED 2026-09-20 — author selected
+  "Keep as-is, caveats disclosed." The pure-Python Mann-Whitney U
+  implementation and the small-n caveat stand as documented; no re-run
+  against `scipy` was performed.
+- [x] **The vendor-concentration table's un-normalized vendor field** (50
+  distinct strings vs. 26 configured taxonomy vendors) — RESOLVED
+  2026-09-20 — author selected "Disclose as-is." No vendor-name
+  normalization will be performed before submission.
+- [x] **The year-over-year trend's noisy R²=0.14** — RESOLVED 2026-09-20 —
+  author selected "Matches my read." The manuscript's existing hedged
+  language ("noisy but real pattern... not a settled trend") stands
+  unchanged.
+- [x] **The IEEE TII page-limit and submission-portal facts in
+  `docs/PUBLISH_GUIDE.md`.** RESOLVED 2026-09-20 — author selected "Leave it
+  flagged for you to confirm." This item is deliberately left OPEN by
+  design, not closed: two secondary sources disagree (8 pages vs. 10/12
+  pages) and neither is IEEE's own current official page. **The author must
+  still confirm the current, authoritative page limit and submission
+  process directly from IEEE TII's own author-guidelines page before
+  submission** — this build could not retrieve that page directly, and this
+  checklist item cannot be marked resolved until that direct confirmation
+  happens.
+- [x] **The relationship to the unsubmitted TPEC 2027 paper.** RESOLVED
+  2026-09-20 — author selected "Proceed now." This manuscript will continue
+  to cite [1] as "prepared for TPEC 2027, not yet submitted" rather than
+  waiting for TPEC 2027 submission or acceptance.
 - [ ] **Full manuscript read-through for tone and accuracy.** A journal
   reviewer holds an extended version to a higher bar than a 6-page
   conference paper. Read every sentence that uses the word "validation" and
   confirm none of them overstate what Section IV's desk review can show.
-- [ ] **Author block and affiliation** (`AUTHORS.json`) — confirm sole
-  authorship and the exact name/ORCID/affiliation spelling are correct for
-  this specific submission.
+  (An informal pass was done via the rendered PDF pages during the build;
+  this item asks for the author's own full read-through, not a proxy for
+  it.)
+- [x] **Author block and affiliation** (`AUTHORS.json`) — RESOLVED
+  2026-09-20. Author confirmed: "i confirm is Ok." Sole authorship
+  (Friday Ogochukwu Ikwuogu, ORCID 0009-0009-2222-1318, Independent
+  Researcher, Odessa, Texas, USA) and the exact name/ORCID/affiliation
+  spelling are confirmed correct for this submission.
 
 ## Sign-off
 
-**Not yet signed.** This checklist should be re-read in full, item by item,
-with the built manuscript open, before this repository's DRAFT stamps are
-removed (`--final` flags) or anything here is shared, pushed publicly, or
-submitted.
+**Not yet signed.** Nine of ten judgment-call items above are resolved, and
+the mechanical reproducibility check has passed clean. Two items remain
+open, one by design and one pending the author's own action:
+
+1. **The IEEE TII page-limit item** stays open until the author confirms
+   the current, authoritative page limit and submission process directly
+   from IEEE TII's own author-guidelines page. This is expected to remain
+   open through this build and is not something this checklist should
+   "close" on the author's behalf.
+2. **The full manuscript read-through** — an informal pass was done via the
+   rendered PDF pages during the build, but this checklist asks for the
+   author's own read of every sentence using the word "validation."
+
+Before this repository's DRAFT stamps are removed (`--final` flags) or
+anything here is shared, pushed publicly, or submitted, the author still
+needs to: (1) do the full manuscript read-through, and (2) give one
+explicit, consolidating sign-off statement in their own words — for
+example, something to the effect of "I have read the manuscript in full,
+I've reviewed every item on this checklist, and I approve this for
+finalization" — after which the figures and manuscript will be rebuilt with
+`--final` and the DRAFT stamps removed. The IEEE TII page-limit
+confirmation remains the author's own action at submission time regardless
+of this sign-off.
