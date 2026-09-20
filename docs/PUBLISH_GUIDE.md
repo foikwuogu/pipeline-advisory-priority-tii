@@ -1,29 +1,26 @@
 # Publish guide — IEEE Transactions on Industrial Informatics submission
 
-**Last checked:** 2026-09-19. **Page-limit and portal facts below are
-UNCONFIRMED against IEEE's own official page** — this build's web access
-could not retrieve IEEE TII's current "Information for Authors" page
-directly (the direct IEEE Xplore document page returned an access error, and
-the official ieee-ies.org author-guidelines subpages returned empty or
-blocked responses to automated fetch). Two secondary sources disagree:
+**Page limit CONFIRMED by the author 2026-09-20, sourced directly from IEEE
+TII's own official author-guidelines / Author Portal page** (this build's
+own web access could not retrieve that page directly; the author retrieved
+and supplied it):
 
-- An older, scraped author-guide document states **regular papers: 4–8
-  formatted pages** including illustrations/references/biographies, with
-  overlength charges of US$160/page from page 9 onward, under a legacy
-  Manuscript Central (ScholarOne) submission flow.
-- A 2026-dated third-party submission-guide blog (not an IEEE-operated site)
-  states **initial submission: 10 pages, final: 12 pages**, US$250/page
-  ($200 for IEEE IES members) overlength from page 11, and describes a
-  newer **"IEEE Transactions on Industrial Informatics Author Portal"** said
-  to have launched February 2025, with a legacy ScholarOne option
-  during a transition period.
+| Manuscript type | New-submission limit | Final-version limit | Over-length charge |
+| --- | --- | --- | --- |
+| Regular research paper | 10 pages | 12 pages | $250/page ($200 for IES members) starting from page 11 |
+| State-of-the-Art / Review paper (requires EiC permission) | 12 pages | 14 pages | $250/page ($200 for IES members) starting from page 13 |
+| Letter | 4 pages | 6 pages | $250/page ($200 for IES members) starting from page 5 |
 
-**Do not submit based on either figure without confirming directly against
-IEEE's own current author-guidelines page at the time of submission** — page
-limits, portals, and charges at IEEE journals do change, and this build's
-own knowledge cutoff and access limitations mean neither number here should
-be trusted as current. Both are recorded so you have a starting point, not a
-final answer.
+This manuscript is a **regular research paper**: 10 pages at initial
+submission, 12 pages at final/camera-ready. An earlier, older scraped
+author-guide document had suggested a legacy 4–8 page limit under a
+ScholarOne-only flow with $160/page overlength from page 9 — that figure is
+now superseded by the table above and should not be used.
+
+Because page limits, portals, and charges at IEEE journals can still change
+between now and actual submission, re-glance at IEEE TII's own
+author-guidelines page once more immediately before submitting, as routine
+due diligence — not because this figure is in doubt.
 
 ## What is confirmed (general IEEE TII scope and process, cross-checked
 across multiple sources)

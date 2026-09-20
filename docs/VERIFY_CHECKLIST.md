@@ -52,15 +52,15 @@ submission — this is not a formality.
   language ("noisy but real pattern... not a settled trend") stands
   unchanged.
 - [x] **The IEEE TII page-limit and submission-portal facts in
-  `docs/PUBLISH_GUIDE.md`.** RESOLVED 2026-09-20 — author selected "Leave it
-  flagged for you to confirm." This item is deliberately left OPEN by
-  design, not closed: two secondary sources disagree (8 pages vs. 10/12
-  pages) and neither is IEEE's own current official page. **The author must
-  still confirm the current, authoritative page limit and submission
-  process directly from IEEE TII's own author-guidelines page before
-  submission** — this build could not retrieve that page directly, and this
-  checklist item cannot be marked resolved until that direct confirmation
-  happens.
+  `docs/PUBLISH_GUIDE.md`.** RESOLVED 2026-09-20. The author retrieved and
+  supplied the page-limit table directly from IEEE TII's own official
+  author-guidelines / Author Portal page: regular research paper, 10 pages
+  at initial submission, 12 pages at final/camera-ready, $250/page
+  overlength charge ($200 for IES members) starting from page 11.
+  `docs/PUBLISH_GUIDE.md` has been updated accordingly and the earlier
+  unconfirmed 4–8 page figure is superseded. Re-glancing at IEEE's page
+  once more immediately before actual submission remains routine due
+  diligence, not an open question.
 - [x] **The relationship to the unsubmitted TPEC 2027 paper.** RESOLVED
   2026-09-20 — author selected "Proceed now." This manuscript will continue
   to cite [1] as "prepared for TPEC 2027, not yet submitted" rather than
@@ -84,12 +84,7 @@ submission — this is not a formality.
 the mechanical reproducibility check has passed clean. Two items remain
 open, one by design and one pending the author's own action:
 
-1. **The IEEE TII page-limit item** stays open until the author confirms
-   the current, authoritative page limit and submission process directly
-   from IEEE TII's own author-guidelines page. This is expected to remain
-   open through this build and is not something this checklist should
-   "close" on the author's behalf.
-2. **The full manuscript read-through** — an informal pass was done via the
+1. **The full manuscript read-through** — an informal pass was done via the
    rendered PDF pages during the build, but this checklist asks for the
    author's own read of every sentence using the word "validation."
 
@@ -100,6 +95,4 @@ explicit, consolidating sign-off statement in their own words — for
 example, something to the effect of "I have read the manuscript in full,
 I've reviewed every item on this checklist, and I approve this for
 finalization" — after which the figures and manuscript will be rebuilt with
-`--final` and the DRAFT stamps removed. The IEEE TII page-limit
-confirmation remains the author's own action at submission time regardless
-of this sign-off.
+`--final` and the DRAFT stamps removed.
