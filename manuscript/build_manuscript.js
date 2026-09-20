@@ -230,6 +230,7 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  fs.writeFileSync("manuscript/TII_extended_manuscript_DRAFT.docx", buf);
-  console.log("Wrote manuscript/TII_extended_manuscript_DRAFT.docx, draft=" + DRAFT);
+  const outPath = DRAFT ? "manuscript/TII_extended_manuscript_DRAFT.docx" : "manuscript/TII_extended_manuscript_v1.docx";
+  fs.writeFileSync(outPath, buf);
+  console.log("Wrote " + outPath + ", draft=" + DRAFT);
 });

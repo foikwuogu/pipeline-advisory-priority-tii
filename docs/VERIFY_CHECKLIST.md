@@ -1,11 +1,10 @@
 # Verification checklist
 
-**Status: ALL JUDGMENT-CALL ITEMS RESOLVED except the full manuscript
-read-through — mechanical checks have passed — final consolidating sign-off
-still pending.** Nothing in this project is published, submitted, or
-presented as finished until the author has done the full read-through below
-and given one explicit, consolidating sign-off statement in their own
-words. This artifact would carry the author's name into a journal
+**Status: SIGNED OFF 2026-09-20.** All items below are resolved and the
+author has given the required consolidating sign-off in his own words (see
+Sign-off section). Nothing in this project is published, submitted, or
+presented as finished until the `--final` rebuild has been run and
+committed. This artifact would carry the authors' names into a journal
 submission — this is not a formality.
 
 ## Mechanical checks (run before the human checks)
@@ -65,13 +64,9 @@ submission — this is not a formality.
   2026-09-20 — author selected "Proceed now." This manuscript will continue
   to cite [1] as "prepared for TPEC 2027, not yet submitted" rather than
   waiting for TPEC 2027 submission or acceptance.
-- [ ] **Full manuscript read-through for tone and accuracy.** A journal
-  reviewer holds an extended version to a higher bar than a 6-page
-  conference paper. Read every sentence that uses the word "validation" and
-  confirm none of them overstate what Section IV's desk review can show.
-  (An informal pass was done via the rendered PDF pages during the build;
-  this item asks for the author's own full read-through, not a proxy for
-  it.)
+- [x] **Full manuscript read-through for tone and accuracy.** RESOLVED
+  2026-09-20. Author confirmed, in his own words: "i have read the
+  manuscript and confirm its good."
 - [x] **Author block and affiliation** (`AUTHORS.json`) — RESOLVED, then
   CORRECTED, 2026-09-20. Initially confirmed as sole authorship ("i confirm
   is Ok"). On further review, prompted by a stored record of co-authors for
@@ -106,19 +101,16 @@ submission — this is not a formality.
 
 ## Sign-off
 
-**Not yet signed.** Nine of ten judgment-call items above are resolved, and
-the mechanical reproducibility check has passed clean. Two items remain
-open, one by design and one pending the author's own action:
+**SIGNED 2026-09-20.** All ten judgment-call items above are resolved, the
+mechanical reproducibility check passed clean, and the author has completed
+the full manuscript read-through and given the required consolidating
+sign-off, in his own words: "i have read the manuscript and confirm its
+good." Author: Friday Ogochukwu Ikwuogu (corresponding author).
 
-1. **The full manuscript read-through** — an informal pass was done via the
-   rendered PDF pages during the build, but this checklist asks for the
-   author's own read of every sentence using the word "validation."
-
-Before this repository's DRAFT stamps are removed (`--final` flags) or
-anything here is shared, pushed publicly, or submitted, the author still
-needs to: (1) do the full manuscript read-through, and (2) give one
-explicit, consolidating sign-off statement in their own words — for
-example, something to the effect of "I have read the manuscript in full,
-I've reviewed every item on this checklist, and I approve this for
-finalization" — after which the figures and manuscript will be rebuilt with
-`--final` and the DRAFT stamps removed.
+This checklist is complete. The next steps are: (1) run
+`python3 src/04_build_figures.py --final && node manuscript/build_manuscript.js --final`
+to remove the DRAFT stamps, (2) re-run `python3 scripts/publish_gate.py` to
+confirm no unexpected findings remain, and (3) commit the finalized files.
+GitHub/Zenodo publication (self-serve, via `docs/GITHUB_ZENODO_GUIDE.md`)
+and IEEE TII submission (the author's own personal action through IEEE's
+Author Portal) remain separate steps outside this build process.
