@@ -92,6 +92,18 @@ submission — this is not a formality.
   2026-09-20 ("you got it right"). This item is fully resolved with no
   remaining caveats.
 
+  A final wrinkle, resolved the same day: the author raised that this
+  manuscript is specifically the IEEE TII-submitted extension of the
+  sole-authored TPEC 2027 paper, and that he would present/submit it
+  personally, and asked whether that meant it should revert to sole
+  authorship. Presenting or submitting a paper alone is a separate matter
+  from who did the intellectual work reflected in it — a manuscript can
+  carry co-authors even when only one of them ever appears at a conference
+  or handles the submission portal. Given that Abutu and Orimogunje's
+  contribution is genuinely embodied in this manuscript's dataset,
+  taxonomy, and crosswalk (as previously confirmed), the author confirmed:
+  keep the three-author list as built. No further change was made.
+
 ## Sign-off
 
 **Not yet signed.** Nine of ten judgment-call items above are resolved, and
