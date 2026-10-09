@@ -78,18 +78,30 @@ process can do on the author's behalf, and it should not be attempted here
 even if credentials were available, because submission is itself an
 attestation the author must make in person.
 
-## Submission-day checklist (once IEEE's own page confirms the details)
+## Submission-day checklist (status as of 2026-10-09)
 
-1. Confirm current page limit, template (Word or LaTeX), and submission
-   portal from IEEE TII's own author-guidelines page.
-2. Reflow this manuscript into that exact template; trim to the confirmed
-   limit without cutting any of the four new-contribution sections below a
-   defensible length.
-3. Prepare: title page, abstract, cover letter (extension disclosure +
-   AI-assistance disclosure), conflict-of-interest statement, data-and-code
-   availability statement (citing this repo's Zenodo DOI once it exists —
-   see `docs/GITHUB_ZENODO_GUIDE.md`).
-4. Submit personally through the confirmed portal.
-5. Log the submission (date, manuscript ID once assigned, portal) in this
-   project's own record — this build process does not track it for you once
-   submission happens outside its scope.
+1. DONE 2026-09-20. Page limit confirmed directly from IEEE TII's own
+   author-guidelines page (table at the top of this file). Template/portal:
+   not separately re-confirmed beyond that page — glance at IEEE's Author
+   Portal once at actual submission time in case anything has changed.
+2. DONE 2026-10-09. The manuscript (`manuscript/TII_extended_manuscript_v1.docx`)
+   is now reflowed into genuine IEEE Transactions two-column format: 10pt
+   Times New Roman, IEEE-standard margins and column gap, wide tables broken
+   into full-width single-column sections. Rebuilt and visually verified
+   page by page. Result: **9 pages**, under the confirmed 10-page
+   initial-submission limit, with headroom.
+3. DONE 2026-10-09. `manuscript/cover_letter.docx` (extension disclosure +
+   AI-assistance disclosure + data-and-code-availability statement, citing
+   the Zenodo DOI) and `manuscript/conflict_of_interest_statement.docx` are
+   drafted. **The conflict-of-interest statement carries an explicit
+   placeholder: it was drafted on the corresponding author's information
+   only and needs direct confirmation from Silas Abutu and Abidemi
+   Orimogunje that neither has a funding source or other interest relevant
+   to this manuscript before it is submitted.** The cover letter's date
+   field is also a placeholder, to be filled in on the day of submission.
+4. NOT DONE — the author's own personal action. Submit through IEEE's
+   Author Portal.
+5. NOT DONE — the author's own action once 4 happens. Log the submission
+   (date, manuscript ID once assigned, portal) in this project's own
+   record — this build process does not track it for you once submission
+   happens outside its scope.
