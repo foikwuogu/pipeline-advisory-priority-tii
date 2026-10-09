@@ -64,7 +64,32 @@ const coiChildren = [
 
 const coiDoc = new Document({ sections: [{ properties: pageProps(), children: coiChildren }] });
 
+// ------------------------------------------------------------------- Title page ----
+// IEEE TII's Author Portal requires this as a SEPARATE upload from the (blinded) main
+// manuscript: it is not sent to peer reviewers, and must carry exactly the identifying
+// content the --anon manuscript build deliberately withholds (title, author names and
+// affiliations, correspondence address, acknowledgments).
+
+const titlePageChildren = [
+  P("ONG-OT Vulnerability Prioritization: Dataset, Method, and Sector-Specific Validation", { bold: true, align: AlignmentType.CENTER }),
+  P("An Extended Analysis of Exploitation Likelihood, Patch Availability, and Compensating-Control Coverage Across CISA ICS Advisories, 2010–2026", { italics: true, align: AlignmentType.CENTER }),
+  P(""),
+  P("Authors", { bold: true }),
+  P("Ogochukwu Friday Ikwuogu, Silas Abutu, and Abidemi Orimogunje"),
+  P(""),
+  P("Affiliations and correspondence", { bold: true }),
+  P("O. F. Ikwuogu (corresponding author) is an Independent Researcher, Odessa, Texas, USA (e-mail: Friday.ikwuogu@gmail.com; ORCID 0009-0009-2222-1318)."),
+  P("S. Abutu is with the Electrical and Electronic Engineering Department, Petroleum Training Institute, Effurun, Delta State, Nigeria (e-mail: abutu_s@pti.edu.ng)."),
+  P("A. Orimogunje is with the Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria (e-mail: orimogunjea@run.edu.ng)."),
+  P(""),
+  P("Acknowledgment", { bold: true }),
+  P("The authors thank the ICS Advisory Project, CISA, FIRST.org, MITRE, NIST, the Center for Internet Security, and the TSA for maintaining the open data and public directive/standard text this analysis builds on."),
+];
+
+const titlePageDoc = new Document({ sections: [{ properties: pageProps(), children: titlePageChildren }] });
+
 Promise.all([
   Packer.toBuffer(coverDoc).then(buf => fs.writeFileSync("manuscript/cover_letter.docx", buf)),
   Packer.toBuffer(coiDoc).then(buf => fs.writeFileSync("manuscript/conflict_of_interest_statement.docx", buf)),
-]).then(() => console.log("Wrote manuscript/cover_letter.docx and manuscript/conflict_of_interest_statement.docx"));
+  Packer.toBuffer(titlePageDoc).then(buf => fs.writeFileSync("manuscript/title_page.docx", buf)),
+]).then(() => console.log("Wrote manuscript/cover_letter.docx, manuscript/conflict_of_interest_statement.docx, and manuscript/title_page.docx"));
