@@ -107,10 +107,15 @@ the full manuscript read-through and given the required consolidating
 sign-off, in his own words: "i have read the manuscript and confirm its
 good." Author: Friday Ogochukwu Ikwuogu (corresponding author).
 
-This checklist is complete. The next steps are: (1) run
-`python3 src/04_build_figures.py --final && node manuscript/build_manuscript.js --final`
-to remove the DRAFT stamps, (2) re-run `python3 scripts/publish_gate.py` to
-confirm no unexpected findings remain, and (3) commit the finalized files.
-GitHub/Zenodo publication (self-serve, via `docs/GITHUB_ZENODO_GUIDE.md`)
-and IEEE TII submission (the author's own personal action through IEEE's
-Author Portal) remain separate steps outside this build process.
+This checklist is complete, and as of 2026-09-20 the `--final` rebuild,
+`publish_gate.py` re-check, GitHub push, and Zenodo archival
+(10.5281/zenodo.22857631, release v1.0.0) are all done -- re-confirmed
+2026-10-08 (origin/main matches local HEAD at commit 71040fe, gate shows
+only the expected pending IEEE-Xplore-DOI placeholder). What is NOT yet
+done, and sits outside this checklist's own scope, is the actual IEEE TII
+submission package: reflowing this manuscript into IEEE's own two-column
+Transactions template and re-verifying it fits the confirmed page limit,
+and preparing the cover letter and conflict-of-interest statement -- see
+the "Submission-day checklist" in `docs/PUBLISH_GUIDE.md`. IEEE TII
+submission itself remains the author's own personal action through IEEE's
+Author Portal.
