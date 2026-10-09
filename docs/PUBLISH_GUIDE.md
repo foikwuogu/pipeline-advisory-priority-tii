@@ -116,12 +116,30 @@ attestation the author must make in person.
    camera-ready version after acceptance. Verified: 9 pages, no author
    name/affiliation/ORCID/institution strings found in the extracted PDF
    text, and no author metadata embedded in the DOCX file properties.
-5. NOT DONE — the author's own personal action. Create (or sign in to) an
-   IEEE Account using an institutional e-mail, then submit the ANON
-   manuscript, `cover_letter.docx`, and `conflict_of_interest_statement.docx`
-   through IEEE's Author Portal at `https://ieee.atyponrex.com/journal/tii`
-   (not the older ScholarOne link some IES pages still show).
-6. NOT DONE — the author's own action once 5 happens. Log the submission
-   (date, manuscript ID once assigned, portal) in this project's own
-   record — this build process does not track it for you once submission
-   happens outside its scope.
+5. DONE 2026-10-08. Submitted through IEEE's Author Portal
+   (`https://ieee.atyponrex.com/journal/tii`, not the older ScholarOne link
+   some IES pages still show). The Author Portal's own submission checklist
+   auto-extracted title/abstract/authors/affiliations from the uploaded
+   files and required a Ringgold organization match per affiliation;
+   Petroleum Training Institute and Redeemer's University matched exactly,
+   and the corresponding author's "Independent Researcher" affiliation was
+   correctly left as "Organization is not listed" since no institution
+   exists to match. Subject Category: Security and Safety. No funding, no
+   human/animal subjects, not a resubmission, never previously published,
+   no Code Ocean / IEEE DataPort entries (code and data availability are
+   already covered by the Zenodo DOI cited in the manuscript). The
+   Reviewer PDF (IEEE's own merged view of what peer reviewers will see)
+   was downloaded and checked page by page before submitting: only the
+   anonymized manuscript is listed under "Files for peer review" — the
+   title page, COI statement, and cover letter are correctly excluded from
+   reviewer view by the portal itself, confirming the double-blind setup
+   worked end to end.
+6. DONE 2026-10-08. Submission logged: Submission ID
+   `44ca441f-9c35-4c96-975e-d38774abda12`, status **Submitted**, portal
+   IEEE Author Portal (`ieee.submission.researchexchange.com`, Atypon
+   ReX). No formal manuscript number assigned yet as of submission date —
+   per the portal, "Submitted On" confirmation plus further instructions
+   will come by e-mail from ScholarOne Manuscripts, which still handles
+   post-submission correspondence even though the new Author Portal
+   handled intake. Update this entry with the manuscript ID once that
+   e-mail arrives.
