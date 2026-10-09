@@ -2,10 +2,15 @@ const fs = require("fs");
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType,
   Table, TableRow, TableCell, WidthType, ShadingType, BorderStyle,
-  ImageRun, PageBreak, Footer, PageNumber,
+  ImageRun, PageBreak, Footer, PageNumber, SectionType,
 } = require("docx");
 
 const DRAFT = !process.argv.includes("--final");
+// --final now also lays the manuscript out as IEEE Transactions-style two-column pages
+// (10pt Times New Roman body, IEEE margins/column gap) instead of the single-column draft
+// layout, so the page count can be checked against IEEE's own confirmed 10-page initial-
+// submission limit before this ever reaches a human reviewer.
+const IEEE_FINAL = !DRAFT;
 const stats = JSON.parse(fs.readFileSync("data/processed/stats.json", "utf-8"));
 const tpec = stats.reused_tpec_stats;
 const sens = stats.epss_sensitivity;
@@ -18,30 +23,44 @@ const FONT = "Times New Roman";
 const pct = (v, d = 1) => Number(v).toFixed(d) + "%";
 const fmt = (v, d = 4) => Number(v).toFixed(d);
 
+// Font sizes in half-points. IEEE Transactions body text is 10pt; the single-column draft
+// layout uses a slightly larger, easier-to-review 11pt.
+const BODY_SIZE = IEEE_FINAL ? 20 : 22;
+const CAP_SIZE = IEEE_FINAL ? 16 : 18;
+const H1_SIZE = IEEE_FINAL ? 20 : 24;
+const H2_SIZE = IEEE_FINAL ? 20 : 22;
+const TABLE_TEXT_SIZE = IEEE_FINAL ? 16 : 18;
+// Figures were sized for a 6.5in single-column draft page; an IEEE two-column page gives
+// each column only about 3.5in, so figures are scaled down proportionally in IEEE_FINAL mode.
+const IMG_SCALE = IEEE_FINAL ? 300 / 470 : 1;
+
 function P(text, opts = {}) {
   return new Paragraph({
     spacing: { after: 160, line: 360 },
     alignment: opts.align || AlignmentType.JUSTIFIED,
-    children: [new TextRun({ text, font: FONT, size: 22, italics: !!opts.italics, bold: !!opts.bold })],
+    children: [new TextRun({ text, font: FONT, size: BODY_SIZE, italics: !!opts.italics, bold: !!opts.bold })],
   });
 }
 function H1(text) {
   return new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 320, after: 160 },
-    children: [new TextRun({ text, font: FONT, size: 24, bold: true })] });
+    alignment: IEEE_FINAL ? AlignmentType.CENTER : AlignmentType.LEFT,
+    children: [new TextRun({ text: IEEE_FINAL ? text.toUpperCase() : text, font: FONT, size: H1_SIZE, bold: true })] });
 }
 function H2(text) {
   return new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 240, after: 120 },
-    children: [new TextRun({ text, font: FONT, size: 22, bold: true, italics: true })] });
+    children: [new TextRun({ text, font: FONT, size: H2_SIZE, bold: !IEEE_FINAL, italics: true })] });
 }
 function CAP(text) {
   return new Paragraph({ spacing: { before: 80, after: 240 }, alignment: AlignmentType.CENTER,
-    children: [new TextRun({ text, font: FONT, size: 18, italics: true })] });
+    children: [new TextRun({ text, font: FONT, size: CAP_SIZE, italics: true })] });
 }
 function IMG(path, widthPx, heightPx, caption) {
   const data = fs.readFileSync(path);
+  const w = Math.round(widthPx * IMG_SCALE);
+  const h = Math.round(heightPx * IMG_SCALE);
   return [
     new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 200, after: 0 },
-      children: [new ImageRun({ type: "png", data, transformation: { width: widthPx, height: heightPx } })] }),
+      children: [new ImageRun({ type: "png", data, transformation: { width: w, height: h } })] }),
     CAP(caption),
   ];
 }
@@ -52,7 +71,7 @@ function cell(text, opts = {}) {
     margins: { top: 60, bottom: 60, left: 80, right: 80 },
     children: [new Paragraph({
       alignment: opts.align || AlignmentType.LEFT,
-      children: [new TextRun({ text: String(text), font: FONT, size: 18,
+      children: [new TextRun({ text: String(text), font: FONT, size: TABLE_TEXT_SIZE,
         bold: !!opts.header, color: opts.header ? "FFFFFF" : "000000" })],
     })],
   });
@@ -135,7 +154,7 @@ const children = [
   H1("IV. Sector-Specific Validation via a Public Control-Framework Crosswalk"),
   P("The working title of this research program includes the phrase “operator validation.” No pipeline operator's security team reviewed this study's taxonomy, scoring formula, or control mappings, and no survey or interview data was collected from one. We say this plainly, in the body of the paper rather than only in a limitations footnote, because overstating what follows would be a more serious defect than the gap itself."),
   P(`What this section does provide is a transparent coverage-and-provenance audit of the base study's TSA Pipeline-2021-02 outcome-to-control-framework crosswalk (data/raw/tsa_crosswalk.csv in the base repository), extended here with a systematic tabulation. For each of the ${fw.n_outcomes} TSA outcome groups and each of ${fw.n_frameworks} independently published frameworks (${fw.frameworks.join(", ")}), we record whether a mapped control identifier exists and, if so, its source_type: primary (the framework's own document cited directly), derived (a secondary open-license source), or author-mapped (this project's own judgment, with no ready-made crosswalk available to cite).`),
-  P(`Every one of the ${fw.n_possible_cells} possible outcome-framework cells has a mapped entry (${pct(fw.cell_coverage_pct,0)} cell coverage) — but cell coverage alone overstates the strength of the crosswalk. Fig. 5 and Table III show the coverage is not evenly evidenced: ${pct(fw.source_type_pct_overall.primary,0)} of mappings (NIST SP 800-82 Rev. 3 and NIST CSF 2.0, both cited directly) are primary-sourced, ${pct(fw.source_type_pct_overall.derived,0)} (NIST SP 800-53 Rev. 5, via an open-license secondary compilation) are derived, and the remaining ${pct(fw.source_type_pct_overall["author-mapped"],0)} — the full IEC 62443 and CIS Controls v8 columns — are author-mapped, because both are paid standards whose full requirement text this project does not reproduce; only their published control IDs and titles were checked directly, and the assignment of those IDs to each TSA outcome is the author's own judgment.`),
+  P(`Every one of the ${fw.n_possible_cells} possible outcome-framework cells has a mapped entry (${pct(fw.cell_coverage_pct,0)} cell coverage) — but cell coverage alone overstates the strength of the crosswalk. Table IV (Appendix B) shows the coverage is not evenly evidenced: ${pct(fw.source_type_pct_overall.primary,0)} of mappings (NIST SP 800-82 Rev. 3 and NIST CSF 2.0, both cited directly) are primary-sourced, ${pct(fw.source_type_pct_overall.derived,0)} (NIST SP 800-53 Rev. 5, via an open-license secondary compilation) are derived, and the remaining ${pct(fw.source_type_pct_overall["author-mapped"],0)} — the full IEC 62443 and CIS Controls v8 columns — are author-mapped, because both are paid standards whose full requirement text this project does not reproduce; only their published control IDs and titles were checked directly, and the assignment of those IDs to each TSA outcome is the author's own judgment.`),
   P("We read this result as follows: the TSA outcome groups this study leans on for compensating-control reasoning are not free-floating assertions—two of five frameworks confirm them against primary government-published text, one against a secondary open compilation—but 40% of the crosswalk's breadth exists only because this project's author judged it so, and would benefit from a licensed-standard review or, better, direct operator confirmation before any compliance-adjacent claim is drawn from it. This is the honest ceiling of what a public-standards desk review can establish, and we present it as exactly that: a necessary, but not sufficient, substitute for the operator validation the working title names."),
 
   H1("V. Results"),
@@ -146,21 +165,21 @@ const children = [
   P(`The flag rate is steeply sensitive to this author-chosen parameter: on the pipeline-relevant subset it falls from ${pct(sens[0].tsa3_flagged_relevant_pct)} at threshold 0.02 to ${pct(sens[sens.length-1].tsa3_flagged_relevant_pct)} at threshold 0.50, a ${fmt(sens[0].tsa3_flagged_relevant_pct/sens[sens.length-1].tsa3_flagged_relevant_pct,1)}× range. This confirms the base study's own disclosure that 0.10 is an operating point, not a universal constant, and shows concretely how much an auditor's own threshold choice would move the TSA-3/6 informational flags—though never the underlying priority score used for ranking.`),
   H2("C. Tier1 vs. tier2 stratified breakdown"),
   ...IMG("figures/fig4_tier_stratified.png", 470, 300, "Fig. 4. Mean priority_score by pipeline-relevance classification tier. tier1 = named pipeline product lines; tier2 = vendor-level match."),
+  CAP("TABLE II. Priority-score distribution by classification-confidence tier."),
   table(
     ["Tier", "n", "% of relevant", "Mean score", "Median score", "KEV-listed %"],
     tier.map(t => [t.pipeline_tier, t.n, pct(t.pct_of_pipeline_relevant), fmt(t.priority_score_mean), fmt(t.priority_score_median), pct(t.known_exploited_pct)]),
     [2600, 1000, 1600, 1600, 1600, 1600],
   ),
-  CAP("TABLE II. Priority-score distribution by classification-confidence tier."),
   P(`The ${tier[1].n}-row tier2 subset scores significantly higher (mean ${fmt(tier[1].priority_score_mean)}) than the ${tier[0].n}-row tier1 subset (mean ${fmt(tier[0].priority_score_mean)}; Mann-Whitney U=${fmt(stats.tier1_vs_tier2_mannwhitney_u,1)}, p=${fmt(stats.tier1_vs_tier2_mannwhitney_p_value,4)}, two-sided normal approximation). Notably, zero of the ${tier[0].n} tier1 (named pipeline product line) rows are KEV-listed, versus ${pct(tier[1].known_exploited_pct)} of tier2 rows—consistent with tier1's much smaller size (${tier[0].n} vs. ${tier[1].n} rows) rather than evidence that named pipeline products are inherently safer; this should not be read as such given the sample size.`),
   H2("D. Vendor concentration within tier2"),
   P(`The tier2_ot_general_energy classification spans ${stats.n_distinct_tier2_vendors} distinct vendor-field values among pipeline-relevant rows—more than the 26 vendors enumerated in the taxonomy configuration, because the source Vendor field is not always a single, normalized name (e.g., multi-vendor advisories and vendor-name variants both appear as distinct strings). Table III lists the five largest contributors by row count.`),
+  CAP("TABLE III. Largest tier2 vendor contributors to the pipeline-relevant subset."),
   table(
     ["Vendor", "Rows", "KEV-listed", "Mean score", "Max score"],
     top5.map(v => [v.vendor, v.n_rows, `${v.known_exploited_n} (${pct(v.known_exploited_pct)})`, fmt(v.priority_score_mean), fmt(v.priority_score_max)]),
     [2600, 1200, 1800, 1600, 1600],
   ),
-  CAP("TABLE III. Largest tier2 vendor contributors to the pipeline-relevant subset."),
   P("Siemens alone accounts for a substantial share of tier2 rows, consistent with the base study's hypothesis that the tier2 signal is diluted by a small number of high-volume industrial-automation vendors whose advisory counts are not pipeline-exclusive."),
   H2("E. Year-over-year trend"),
   ...IMG("figures/fig6_relevant_share_trend.png", 470, 300, "Fig. 6. Pipeline-relevant share of all ICS advisories by year, 2010–2025, with an ordinary-least-squares linear trend."),
@@ -219,15 +238,54 @@ const csvRows = csvLines.slice(1).map(l => {
   const cols = l.split(",");
   return [cols[0], cols[2], cols[3]];
 });
+children.push(CAP("TABLE IV. Full control-framework crosswalk (30 TSA outcome-framework cells)."));
 children.push(table(["TSA Outcome", "Framework", "Source type"], csvRows, [2400, 2600, 2000]));
 
-const doc = new Document({
-  sections: [{
+const footer = { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER,
+  children: [new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: IEEE_FINAL ? 16 : 18 })] })] }) };
+
+let docSections;
+if (!IEEE_FINAL) {
+  // Draft layout: one simple single-column section, unchanged from before.
+  docSections = [{
     properties: { page: { size: { width: 12240, height: 15840 }, margin: { top: 1440, bottom: 1440, left: 1440, right: 1440 } } },
-    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER,
-      children: [new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 18 })] })] }) },
+    footers: footer,
     children,
-  }],
+  }];
+} else {
+  // IEEE Transactions layout: two columns, IEEE-standard margins and column gap, with the
+  // three wide data tables (Table II, Table III, Table IV) broken out into their own
+  // full-width, single-column "island" sections via continuous section breaks, since none
+  // of them fit inside a ~3.5in column. Each table's CAP() caption was placed immediately
+  // before its table() call above specifically so it can be pulled into the same island.
+  const pageProps = { size: { width: 12240, height: 15840 }, margin: { top: 1080, bottom: 1440, left: 900, right: 900 } };
+  const runs = [];
+  let current = { cols: 2, items: [] };
+  for (const item of children) {
+    if (item instanceof Table) {
+      const capParagraph = current.items.length ? current.items.pop() : undefined;
+      if (current.items.length) runs.push(current);
+      runs.push({ cols: 1, items: capParagraph ? [capParagraph, item] : [item] });
+      current = { cols: 2, items: [] };
+    } else {
+      current.items.push(item);
+    }
+  }
+  if (current.items.length) runs.push(current);
+
+  docSections = runs.map((run, i) => ({
+    properties: {
+      page: pageProps,
+      column: run.cols === 2 ? { count: 2, space: 230, separate: false } : { count: 1 },
+      type: i === 0 ? undefined : SectionType.CONTINUOUS,
+    },
+    footers: footer,
+    children: run.items,
+  }));
+}
+
+const doc = new Document({
+  sections: docSections,
 });
 
 Packer.toBuffer(doc).then(buf => {
