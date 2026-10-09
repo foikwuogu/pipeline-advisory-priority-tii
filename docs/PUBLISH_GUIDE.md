@@ -90,18 +90,38 @@ attestation the author must make in person.
    into full-width single-column sections. Rebuilt and visually verified
    page by page. Result: **9 pages**, under the confirmed 10-page
    initial-submission limit, with headroom.
-3. DONE 2026-10-09. `manuscript/cover_letter.docx` (extension disclosure +
-   AI-assistance disclosure + data-and-code-availability statement, citing
-   the Zenodo DOI) and `manuscript/conflict_of_interest_statement.docx` are
-   drafted. **The conflict-of-interest statement carries an explicit
-   placeholder: it was drafted on the corresponding author's information
-   only and needs direct confirmation from Silas Abutu and Abidemi
-   Orimogunje that neither has a funding source or other interest relevant
-   to this manuscript before it is submitted.** The cover letter's date
-   field is also a placeholder, to be filled in on the day of submission.
-4. NOT DONE — the author's own personal action. Submit through IEEE's
-   Author Portal.
-5. NOT DONE — the author's own action once 4 happens. Log the submission
+3. DONE 2026-10-09. `manuscript/cover_letter.docx` and
+   `manuscript/conflict_of_interest_statement.docx` are drafted. No funding,
+   grant, or other financial support was received for this research; this
+   has been directly confirmed by all three authors, including co-authors
+   Silas Abutu and Abidemi Orimogunje (no placeholder remains in the COI
+   statement). The cover letter's date field is still a placeholder, to be
+   filled in on the day of submission.
+4. DONE 2026-10-09. IEEE TII's own submission checklist, read live from
+   `ieee-ies.org/pubs/transactions-on-industrial-informatics/new-submission`,
+   requires double-blind review: no author names, affiliations, ORCID, or
+   acknowledgments in the manuscript file, and requires an institutional
+   e-mail (not a free webmail address) on the IEEE Author Portal account.
+   `manuscript/TII_extended_manuscript_v1_ANON.docx` is the blinded review
+   copy — build with `node manuscript/build_manuscript.js --final --anon`.
+   It strips the author/affiliation block and the Acknowledgment section,
+   redacts the self-citing conference reference ([1]) to withhold the
+   author's name (full attribution is disclosed to the editor via the cover
+   letter instead), and withholds the Zenodo DOI from Appendix A — citing
+   that DOI directly in the review copy would deanonymize the authors
+   immediately, since the Zenodo record's own metadata lists their real
+   names. **This `_ANON.docx` file, not `TII_extended_manuscript_v1.docx`,
+   is the one to upload as the manuscript in the Author Portal.** The
+   full-credit `v1.docx` remains correct for the Zenodo archive and any
+   camera-ready version after acceptance. Verified: 9 pages, no author
+   name/affiliation/ORCID/institution strings found in the extracted PDF
+   text, and no author metadata embedded in the DOCX file properties.
+5. NOT DONE — the author's own personal action. Create (or sign in to) an
+   IEEE Account using an institutional e-mail, then submit the ANON
+   manuscript, `cover_letter.docx`, and `conflict_of_interest_statement.docx`
+   through IEEE's Author Portal at `https://ieee.atyponrex.com/journal/tii`
+   (not the older ScholarOne link some IES pages still show).
+6. NOT DONE — the author's own action once 5 happens. Log the submission
    (date, manuscript ID once assigned, portal) in this project's own
    record — this build process does not track it for you once submission
    happens outside its scope.

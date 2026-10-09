@@ -11,6 +11,10 @@ const DRAFT = !process.argv.includes("--final");
 // layout, so the page count can be checked against IEEE's own confirmed 10-page initial-
 // submission limit before this ever reaches a human reviewer.
 const IEEE_FINAL = !DRAFT;
+// --anon produces the double-blind review copy IEEE's TII checklist requires: no author
+// names, affiliations, ORCID, acknowledgments, or self-identifying citation text. Pair with
+// --final for the actual submission file.
+const ANON = process.argv.includes("--anon");
 const stats = JSON.parse(fs.readFileSync("data/processed/stats.json", "utf-8"));
 const tpec = stats.reused_tpec_stats;
 const sens = stats.epss_sensitivity;
@@ -128,7 +132,7 @@ const indexTerms = new Paragraph({
 });
 
 const children = [
-  title, subtitle, authorBlock, affilBlock,
+  title, subtitle, ...(ANON ? [] : [authorBlock, affilBlock]),
   ...draftNote,
   abstract, indexTerms,
 
@@ -197,11 +201,15 @@ const children = [
   H1("VII. Conclusion and Future Work"),
   P("Extending a verified conference-length analysis with a robustness check, a finer statistical stratification, a quantified trend estimate, and—most importantly—an honest accounting of what a public-standards crosswalk can and cannot establish, produces a paper that is more defensible, not merely longer. The central methodological lesson we would offer other researchers building similar OT/ICS prioritization schemes is the one in Section IV: a claim of “validation” should specify, in the abstract and not only in a limitations section, exactly what kind of evidence backs it—primary source, secondary compilation, or the author's own judgment—because these are not interchangeable, and conflating them is a more serious error than acknowledging a gap. Future work should pursue real operator-confirmed validation, a higher-precision pipeline-asset taxonomy validated against a specific operator's inventory, and annual re-runs of the year-over-year trend analysis (Section V.E) as more advisory years accumulate."),
 
-  H1("Acknowledgment"),
-  P("The authors thank the ICS Advisory Project, CISA, FIRST.org, MITRE, NIST, the Center for Internet Security, and the TSA for maintaining the open data and public directive/standard text this analysis builds on."),
+  ...(ANON ? [] : [
+    H1("Acknowledgment"),
+    P("The authors thank the ICS Advisory Project, CISA, FIRST.org, MITRE, NIST, the Center for Internet Security, and the TSA for maintaining the open data and public directive/standard text this analysis builds on."),
+  ]),
 
   H1("References"),
-  P("[1] O. F. Ikwuogu, “Which ICS advisories matter to a pipeline operator? Exploitation likelihood, patch availability, and compensating controls across CISA advisories, 2010–2026,” prepared for IEEE Texas Power and Energy Conference (TPEC 2027), College Station, TX (not yet submitted as of this writing; TPEC 2027's call for papers is not yet published).", { align: AlignmentType.LEFT }),
+  P(ANON
+    ? "[1] Author name withheld for double-blind review, “Which ICS advisories matter to a pipeline operator? Exploitation likelihood, patch availability, and compensating controls across CISA advisories, 2010–2026,” prepared for IEEE Texas Power and Energy Conference (TPEC 2027), College Station, TX (not yet submitted as of this writing; TPEC 2027's call for papers is not yet published). Full attribution is disclosed to the editor in the cover letter."
+    : "[1] O. F. Ikwuogu, “Which ICS advisories matter to a pipeline operator? Exploitation likelihood, patch availability, and compensating controls across CISA advisories, 2010–2026,” prepared for IEEE Texas Power and Energy Conference (TPEC 2027), College Station, TX (not yet submitted as of this writing; TPEC 2027's call for papers is not yet published).", { align: AlignmentType.LEFT }),
   P("[2] Y. Jiang, N. Oo, Q. Meng, H. W. Lim, and B. Sikdar, “A Survey on Vulnerability Prioritization: Taxonomy, Metrics, and Research Challenges,” arXiv:2502.11070, 2025.", { align: AlignmentType.LEFT }),
   P("[3] J. Jacobs, S. Romanosky, B. Edwards, M. Roytman, and I. Adjerid, “Exploit Prediction Scoring System (EPSS),” Digital Threats: Research and Practice, vol. 2, no. 3, Article 20, pp. 1–17, 2021.", { align: AlignmentType.LEFT }),
   P("[4] FIRST.org, “Exploit Prediction Scoring System (EPSS).” [Online]. Available: https://www.first.org/epss/", { align: AlignmentType.LEFT }),
@@ -219,7 +227,8 @@ const children = [
 
   new Paragraph({ children: [new PageBreak()] }),
   H1("Appendix A: Reproducibility"),
-  P("Data and code availability: All new analysis code, configuration, documentation, figures, and this manuscript are archived at Zenodo, DOI: 10.5281/zenodo.22857631 (https://doi.org/10.5281/zenodo.22857631), corresponding to the GitHub repository release tagged v1.0.0. This DOI covers this extension's own reproducibility package; it is separate from any DOI the base TPEC 2027 paper's own reproducibility package may receive [1], and separate from the IEEE Xplore DOI this journal article would receive upon acceptance and publication.", { italics: true }),
+  P(ANON
+    ? "Data and code availability: All new analysis code, configuration, documentation, figures, and this manuscript are archived in a versioned, publicly accessible repository with a persistent DOI. The specific DOI is withheld from this review copy because the archive's metadata identifies the authors; it is disclosed to the editor in the cover letter and will be restored to this section in the camera-ready manuscript upon acceptance." : "Data and code availability: All new analysis code, configuration, documentation, figures, and this manuscript are archived at Zenodo, DOI: 10.5281/zenodo.22857631 (https://doi.org/10.5281/zenodo.22857631), corresponding to the GitHub repository release tagged v1.0.0. This DOI covers this extension's own reproducibility package; it is separate from any DOI the base TPEC 2027 paper's own reproducibility package may receive [1], and separate from the IEEE Xplore DOI this journal article would receive upon acceptance and publication.", { italics: true }),
   P("From a clone of this repository (data/raw/pipeline_prioritized_v1_REUSED.csv is committed; the base study's own upstream raw export is not, per [1]):"),
   P("pip install pandas pyyaml", { italics: true }),
   P("python3 src/01_sensitivity_and_stratified.py", { italics: true }),
@@ -289,7 +298,10 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buf => {
-  const outPath = DRAFT ? "manuscript/TII_extended_manuscript_DRAFT.docx" : "manuscript/TII_extended_manuscript_v1.docx";
+  let outPath;
+  if (DRAFT) outPath = "manuscript/TII_extended_manuscript_DRAFT.docx";
+  else if (ANON) outPath = "manuscript/TII_extended_manuscript_v1_ANON.docx";
+  else outPath = "manuscript/TII_extended_manuscript_v1.docx";
   fs.writeFileSync(outPath, buf);
-  console.log("Wrote " + outPath + ", draft=" + DRAFT);
+  console.log("Wrote " + outPath + ", draft=" + DRAFT + ", anon=" + ANON);
 });
