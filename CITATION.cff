@@ -14,7 +14,7 @@ authors:
     given-names: "Abidemi"
     affiliation: "Electrical and Electronic Engineering Department, Redeemer's University, Ede, Osun State, Nigeria"
 license: MIT
-repository-code: "https://github.com/foikwuogu/ONG-OT-vulnerability-prioritization-dataset-method-and-operator-validation"
+repository-code: "https://github.com/foikwuogu/pipeline-advisory-priority-tii"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22857631"

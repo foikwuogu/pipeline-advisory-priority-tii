@@ -35,7 +35,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/foikwuogu/ONG-OT-vulnerability-prioritization-dataset-method-and-operator-validation",
+      "identifier": "https://github.com/foikwuogu/pipeline-advisory-priority-tii",
       "relation": "isSupplementTo",
       "scheme": "url"
     }
