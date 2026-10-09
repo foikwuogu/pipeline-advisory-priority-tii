@@ -1,11 +1,12 @@
 # Verification checklist
 
-**Status: SIGNED OFF 2026-09-20.** All items below are resolved and the
-author has given the required consolidating sign-off in his own words (see
-Sign-off section). Nothing in this project is published, submitted, or
-presented as finished until the `--final` rebuild has been run and
-committed. This artifact would carry the authors' names into a journal
-submission — this is not a formality.
+**Status: SIGNED OFF 2026-09-20; SUBMITTED TO IEEE TII 2026-10-08.** All
+items below are resolved, the author gave the required consolidating
+sign-off in his own words (see Sign-off section), and the manuscript has
+since been submitted to IEEE Transactions on Industrial Informatics
+through the Author Portal (Submission ID
+`44ca441f-9c35-4c96-975e-d38774abda12`). See the Sign-off section's
+2026-10-08 update for submission detail.
 
 ## Mechanical checks (run before the human checks)
 
@@ -112,10 +113,22 @@ This checklist is complete, and as of 2026-09-20 the `--final` rebuild,
 (10.5281/zenodo.22857631, release v1.0.0) are all done -- re-confirmed
 2026-10-08 (origin/main matches local HEAD at commit 71040fe, gate shows
 only the expected pending IEEE-Xplore-DOI placeholder). What is NOT yet
-done, and sits outside this checklist's own scope, is the actual IEEE TII
-submission package: reflowing this manuscript into IEEE's own two-column
-Transactions template and re-verifying it fits the confirmed page limit,
-and preparing the cover letter and conflict-of-interest statement -- see
-the "Submission-day checklist" in `docs/PUBLISH_GUIDE.md`. IEEE TII
-submission itself remains the author's own personal action through IEEE's
-Author Portal.
+done, and was re-confirmed again 2026-10-08.
+
+**UPDATE 2026-10-08: the IEEE TII submission itself is also now complete.**
+The two-column Transactions reflow, the double-blind anonymized manuscript
+required by TII's own submission checklist, the title page, the cover
+letter, and the conflict-of-interest statement (funding confirmed by all
+three authors, no placeholder remaining) were all built, verified, and
+submitted through IEEE's Author Portal at
+`https://ieee.atyponrex.com/journal/tii`. The author personally completed
+the submission in the portal (Submission ID
+`44ca441f-9c35-4c96-975e-d38774abda12`, status Submitted, 8 October 2026);
+that click is itself the author's attestation and is not something this
+checklist or build process performed on his behalf. Full detail is in the
+"Submission-day checklist" in `docs/PUBLISH_GUIDE.md` and in the project's
+`submission-status.md`. This closes every item this checklist tracks --
+nothing from this project's own build/verify/publish/submit scope remains
+open. What happens next (editorial correspondence, peer review, a
+manuscript number, and any requested revisions) is outside this
+checklist's scope and will be logged separately as it happens.
